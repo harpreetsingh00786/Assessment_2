@@ -1,0 +1,20 @@
+Alice Johnson, S001, 85, 92, 78, Excellent performance in Assignment 2
+Bob Smith, S002, 72, 88, 90, Consistently good grades
+Carol Davis, S003, 91, 79, 84, Strong start but dropped in Assignment 2
+David Wilson, S004, 76, 68, 93, Improved significantly in Assignment 3
+Eve Brown, S005, 88, 95, 87, Top performer in Assignment 2
+Frank Adams, S006, 75, 81, 76, Needs improvement in Assignment 2
+Grace Lee, S007, 90, 88, 91, Steady performance
+Henry Turner, S008, 68, 74, 79, Room for improvement
+Ivy Clark, S009, 84, 92, 89, Excellent performance in Assignment 2
+Jack White, S010, 93, 87, 88, Strong start
+Katie Hall, S011, 79, 85, 91, Consistent performance
+Liam Walker, S012, 87, 89, 86, Good grades throughout
+Mia Allen, S013, 92, 90, 94, Top performer
+Noah Hill, S014, 70, 78, 75, Needs improvement
+Olivia Young, S015, 85, 86, 88, Good overall performance
+Paula Martin, S016, 78, 75, 72, Needs improvement
+Quinn King, S017, 91, 88, 84, Strong start but dropped in Assignment 3
+Ryan Lewis, S018, 94, 92, 89, Top performer
+Samantha Turner, S019, 88, 86, 90, Good overall performance
+Tyler Harris, S020, 77, 79, 82, Steady progress

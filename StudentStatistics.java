@@ -8,6 +8,14 @@
  * @version (25/09/2023)
  */
 
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import java.io.FileReader;
+
+
 class Student {
     private String name;
     private String studentID;
@@ -21,5 +29,40 @@ class Student {
 }
 public class StudentStatistics
 {
-    
+    public static void main(String[] args) {
+        List<Student> students = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
+        String filename;
+        
+        // Use while loop with true for iteration until user stop the loop 
+        while (true) {
+            System.out.print("Enter student info file name: ");
+            filename = scanner.next();
+        
+            // Read data from the user given file
+            try (BufferedReader br = new BufferedReader(new FileReader(filename + ".txt"))) {
+                String line;
+                while ((line = br.readLine()) != null) {    
+                    String[] item = line.split(",");
+                    String name = item[0].trim();
+                    String studentID = item[1].trim();
+                    int[] assessmentMarks = {
+                        Integer.parseInt(item[2].trim()),
+                        Integer.parseInt(item[3].trim()),
+                        Integer.parseInt(item[4].trim())
+                    };
+                    
+                    // Add student information into the students list
+                    Student student = new Student(name, studentID, assessmentMarks);
+                    students.add(student);
+                }
+                
+                System.out.println("The student info successfully loaded.\n");
+                break;
+                
+            } catch (IOException e) {
+                System.out.println("This file not exist.");
+            }
+        }
+    }
 }
