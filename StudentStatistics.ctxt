@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.target=StudentStatistics
+comment1.params=name\ studentID\ assessmentMarks
+comment1.target=Student(java.lang.String,\ java.lang.String,\ int[])
+numComments=2
