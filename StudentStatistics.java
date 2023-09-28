@@ -26,6 +26,20 @@ class Student {
         this.studentID = studentID;
         this.assessmentMarks = assessmentMarks;
     }
+    
+    public int getTotalMarks() {
+        int total = 0;
+        for (int mark : assessmentMarks) {
+            total = total + mark;
+        }
+        return total;
+    }
+
+    @Override
+    public String toString() {
+        return "Name: " + name + " || Student ID: " + studentID + " || Marks: " +
+                assessmentMarks[0] + ", " + assessmentMarks[1] + ", " + assessmentMarks[2] + " || Total: " + getTotalMarks();
+    }
 }
 public class StudentStatistics
 {
