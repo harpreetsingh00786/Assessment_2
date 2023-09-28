@@ -78,5 +78,38 @@ public class StudentStatistics
                 System.out.println("This file not exist.");
             }
         }
+        
+         // Use while loop with true for iteration until user stop the loop 
+        while (true) {
+            // Display menu to the user for choose an option
+            System.out.println("===== Student Statistics - Menu =====\n" +
+                                "Press 1. Calculate and display total mark for each student\n" +
+                                "Press 2. Display students with total marks less than a certain threshold\n" +
+                                "Press 3. Display top 5 students with highest and lowest marks\n" +
+                                "Press 4. Quit\n");
+                                
+            int choice = scanner.nextInt();
+            // The user chocie is equal to 1, then goto inside the if statement
+            if (choice == 1) {
+            }
+            
+            else if (choice ==2){
+                
+            }
+            else if (choice ==3){
+                
+            }
+            else if (choice ==4){
+                 System.out.println("Thank you for using Student Statistics!");
+                System.exit(0);
+            }
+          
+            // The user chocie is other than 1-4, then goto inside the else statement
+          
+            else {
+                 System.out.println("WARNING! Please choose between 1 - 4.");
+      
+            }
+                            }
     }
 }
