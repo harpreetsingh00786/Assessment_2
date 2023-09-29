@@ -10,4 +10,6 @@ comment4.params=args
 comment4.target=void\ main(java.lang.String[])
 comment5.params=students
 comment5.target=void\ display_students_info(java.util.List)
-numComments=6
+comment6.params=students\ threshold
+comment6.target=void\ display_students_below_threshold(java.util.List,\ int)
+numComments=7

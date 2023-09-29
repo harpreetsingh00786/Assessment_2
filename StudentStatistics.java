@@ -95,7 +95,11 @@ public class StudentStatistics
             }
             
             else if (choice ==2){
-                
+                System.out.print("Enter the threshold: ");
+                int threshold = scanner.nextInt();
+                System.out.println();
+                display_students_below_threshold(students, threshold); 
+                System.out.println();
             }
             else if (choice ==3){
                 
@@ -121,5 +125,14 @@ public class StudentStatistics
             System.out.println(student);
         }
         System.out.println();
+    }
+    
+     // This method shows only the data that is below to the user given threshold
+    private static void display_students_below_threshold(List<Student> students, int threshold) {
+        for (Student student : students) {
+            if (student.getTotalMarks() < threshold) {
+                System.out.println(student);
+            }
+        }
     }
 }
