@@ -91,6 +91,7 @@ public class StudentStatistics
             int choice = scanner.nextInt();
             // The user chocie is equal to 1, then goto inside the if statement
             if (choice == 1) {
+                display_students_info(students);
             }
             
             else if (choice ==2){
@@ -110,6 +111,15 @@ public class StudentStatistics
                  System.out.println("WARNING! Please choose between 1 - 4.");
       
             }
-                            }
+        }
+    }
+    
+    // This method shows complete details of the student
+    private static void display_students_info(List<Student> students) {
+        System.out.println();
+        for (Student student : students) {
+            System.out.println(student);
+        }
+        System.out.println();
     }
 }
