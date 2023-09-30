@@ -12,4 +12,6 @@ comment5.params=students
 comment5.target=void\ display_students_info(java.util.List)
 comment6.params=students\ threshold
 comment6.target=void\ display_students_below_threshold(java.util.List,\ int)
-numComments=7
+comment7.params=students\ n\ highest
+comment7.target=void\ display_topN_students(java.util.List,\ int,\ boolean)
+numComments=8

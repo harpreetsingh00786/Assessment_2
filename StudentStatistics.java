@@ -102,15 +102,14 @@ public class StudentStatistics
                 System.out.println();
             }
             else if (choice ==3){
-                
+                 display_topN_students(students, 5, true);
+                 System.out.println();
             }
             else if (choice ==4){
                  System.out.println("Thank you for using Student Statistics!");
                 System.exit(0);
             }
-          
             // The user chocie is other than 1-4, then goto inside the else statement
-          
             else {
                  System.out.println("WARNING! Please choose between 1 - 4.");
       
@@ -133,6 +132,42 @@ public class StudentStatistics
             if (student.getTotalMarks() < threshold) {
                 System.out.println(student);
             }
+        }
+    }
+    
+    
+    // This method shows top 5 highest students information
+    private static void display_topN_students(List<Student> students, int n, boolean highest) {
+        int size = students.size();
+        boolean swap = false;
+        
+        // Using bubble sort to sorte the data as per requirement
+        for (int i = 0; i < size - 1; i++) {
+            for (int j = 0; j < size - i - 1; j++) {
+                swap = false;
+                
+                if (highest) {
+                    if (students.get(j).getTotalMarks() < students.get(j + 1).getTotalMarks()) {
+                        swap = true;
+                    }
+                
+                } 
+                
+                if (swap) {
+                    Student temp = students.get(j);
+                    students.set(j, students.get(j + 1));
+                    students.set(j + 1, temp);
+                }
+            }
+        }
+        
+        // Check the swap value, if true display highest 
+        if(!swap == true) {
+            System.out.println("\n              Top " + n + " highest students");
+        } 
+        
+        for (int i = 0; i < n && i < students.size(); i++) {
+            System.out.println(students.get(i));
         }
     }
 }
