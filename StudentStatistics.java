@@ -103,6 +103,7 @@ public class StudentStatistics
             }
             else if (choice ==3){
                  display_topN_students(students, 5, true);
+                 display_topN_students(students, 5, false);
                  System.out.println();
             }
             else if (choice ==4){
@@ -136,7 +137,7 @@ public class StudentStatistics
     }
     
     
-    // This method shows top 5 highest students information
+    // This method shows top 5 highest and lowest students information
     private static void display_topN_students(List<Student> students, int n, boolean highest) {
         int size = students.size();
         boolean swap = false;
@@ -151,7 +152,11 @@ public class StudentStatistics
                         swap = true;
                     }
                 
-                } 
+                } else {
+                    if (students.get(j).getTotalMarks() > students.get(j + 1).getTotalMarks()) {
+                        swap = true;
+                    }
+                }
                 
                 if (swap) {
                     Student temp = students.get(j);
@@ -161,10 +166,12 @@ public class StudentStatistics
             }
         }
         
-        // Check the swap value, if true display highest 
+        // Check the swap value, if true display highest else lowest
         if(!swap == true) {
             System.out.println("\n              Top " + n + " highest students");
-        } 
+        } else{
+            System.out.println("\n              Top " + n + " lowest students");
+        }
         
         for (int i = 0; i < n && i < students.size(); i++) {
             System.out.println(students.get(i));
