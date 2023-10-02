@@ -17,16 +17,18 @@ import java.io.FileReader;
 
 
 class Student {
-    private String name;
+    private String lastName;
+    private String firstName;
     private String studentID;
     private int[] assessmentMarks;
 
-    public Student(String name, String studentID, int[] assessmentMarks) {
-        this.name = name;
+    public Student(String lastName, String firstName, String studentID, int[] assessmentMarks) {
+        this.lastName = lastName;
+        this.firstName = firstName;
         this.studentID = studentID;
         this.assessmentMarks = assessmentMarks;
     }
-    
+
     public int getTotalMarks() {
         int total = 0;
         for (int mark : assessmentMarks) {
@@ -37,88 +39,77 @@ class Student {
 
     @Override
     public String toString() {
-        return "Name: " + name + " || Student ID: " + studentID + " || Marks: " +
+        return "Last Name: " + lastName + " || First Name: " + firstName + " || Student ID: " + studentID + " || Marks: " +
                 assessmentMarks[0] + ", " + assessmentMarks[1] + ", " + assessmentMarks[2] + " || Total: " + getTotalMarks();
     }
 }
-public class StudentStatistics
-{
+
+public class StudentStatistics {
     public static void main(String[] args) {
         List<Student> students = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
         String filename;
-        
-        // Use while loop with true for iteration until user stop the loop 
+
         while (true) {
             System.out.print("Enter student info file name: ");
             filename = scanner.next();
-        
-            // Read data from the user given file
+
             try (BufferedReader br = new BufferedReader(new FileReader(filename + ".txt"))) {
                 String line;
-                while ((line = br.readLine()) != null) {    
+                br.readLine();
+                while ((line = br.readLine()) != null) {
                     String[] item = line.split(",");
-                    String name = item[0].trim();
-                    String studentID = item[1].trim();
+                    String lastName = item[0].trim();
+                    String firstName = item[1].trim();
+                    String studentID = item[2].trim();
                     int[] assessmentMarks = {
-                        Integer.parseInt(item[2].trim()),
-                        Integer.parseInt(item[3].trim()),
-                        Integer.parseInt(item[4].trim())
+                            Integer.parseInt(item[3].trim()),
+                            Integer.parseInt(item[4].trim()),
+                            Integer.parseInt(item[5].trim())
                     };
-                    
-                    // Add student information into the students list
-                    Student student = new Student(name, studentID, assessmentMarks);
+
+                    Student student = new Student(lastName, firstName, studentID, assessmentMarks);
                     students.add(student);
                 }
-                
+
                 System.out.println("The student info successfully loaded.\n");
                 break;
-                
+
             } catch (IOException e) {
-                System.out.println("This file not exist.");
+                System.out.println("This file does not exist.");
             }
         }
-        
-         // Use while loop with true for iteration until user stop the loop 
+
         while (true) {
-            // Display menu to the user for choose an option
             System.out.println("===== Student Statistics - Menu =====\n" +
-                                "Press 1. Calculate and display total mark for each student\n" +
-                                "Press 2. Display students with total marks less than a certain threshold\n" +
-                                "Press 3. Display top 5 students with highest and lowest marks\n" +
-                                "Press 4. Quit\n");
-                                
+                    "Press 1. Calculate and display total mark for each student\n" +
+                    "Press 2. Display students with total marks less than a certain threshold\n" +
+                    "Press 3. Display top 5 students with highest and lowest marks\n" +
+                    "Press 4. Quit\n");
+
             int choice = scanner.nextInt();
-            // The user chocie is equal to 1, then goto inside the if statement
+
             if (choice == 1) {
                 display_students_info(students);
-            }
-            
-            else if (choice ==2){
+            } else if (choice == 2) {
                 System.out.print("Enter the threshold: ");
                 int threshold = scanner.nextInt();
                 System.out.println();
-                display_students_below_threshold(students, threshold); 
+                display_students_below_threshold(students, threshold);
                 System.out.println();
-            }
-            else if (choice ==3){
-                 display_topN_students(students, 5, true);
-                 display_topN_students(students, 5, false);
-                 System.out.println();
-            }
-            else if (choice ==4){
-                 System.out.println("Thank you for using Student Statistics!");
+            } else if (choice == 3) {
+                display_topN_students(students, 5, true);
+                display_topN_students(students, 5, false);
+                System.out.println();
+            } else if (choice == 4) {
+                System.out.println("Thank you for using Student Statistics!");
                 System.exit(0);
-            }
-            // The user chocie is other than 1-4, then goto inside the else statement
-            else {
-                 System.out.println("WARNING! Please choose between 1 - 4.");
-      
+            } else {
+                System.out.println("WARNING! Please choose between 1 - 4.");
             }
         }
     }
-    
-    // This method shows complete details of the student
+
     private static void display_students_info(List<Student> students) {
         System.out.println();
         for (Student student : students) {
@@ -126,8 +117,7 @@ public class StudentStatistics
         }
         System.out.println();
     }
-    
-     // This method shows only the data that is below to the user given threshold
+
     private static void display_students_below_threshold(List<Student> students, int threshold) {
         for (Student student : students) {
             if (student.getTotalMarks() < threshold) {
@@ -135,29 +125,26 @@ public class StudentStatistics
             }
         }
     }
-    
-    
-    // This method shows top 5 highest and lowest students information
+
     private static void display_topN_students(List<Student> students, int n, boolean highest) {
         int size = students.size();
         boolean swap = false;
-        
-        // Using bubble sort to sorte the data as per requirement
+
         for (int i = 0; i < size - 1; i++) {
             for (int j = 0; j < size - i - 1; j++) {
                 swap = false;
-                
+
                 if (highest) {
                     if (students.get(j).getTotalMarks() < students.get(j + 1).getTotalMarks()) {
                         swap = true;
                     }
-                
+
                 } else {
                     if (students.get(j).getTotalMarks() > students.get(j + 1).getTotalMarks()) {
                         swap = true;
                     }
                 }
-                
+
                 if (swap) {
                     Student temp = students.get(j);
                     students.set(j, students.get(j + 1));
@@ -165,16 +152,16 @@ public class StudentStatistics
                 }
             }
         }
-        
-        // Check the swap value, if true display highest else lowest
-        if(!swap == true) {
+
+        if (highest) {
             System.out.println("\n              Top " + n + " highest students");
-        } else{
+        } else {
             System.out.println("\n              Top " + n + " lowest students");
         }
-        
+
         for (int i = 0; i < n && i < students.size(); i++) {
             System.out.println(students.get(i));
         }
     }
 }
+

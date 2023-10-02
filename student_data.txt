@@ -1,20 +1,21 @@
-Alice Johnson, S001, 85, 92, 78, Excellent performance in Assignment 2
-Bob Smith, S002, 72, 88, 90, Consistently good grades
-Carol Davis, S003, 91, 79, 84, Strong start but dropped in Assignment 2
-David Wilson, S004, 76, 68, 93, Improved significantly in Assignment 3
-Eve Brown, S005, 88, 95, 87, Top performer in Assignment 2
-Frank Adams, S006, 75, 81, 76, Needs improvement in Assignment 2
-Grace Lee, S007, 90, 88, 91, Steady performance
-Henry Turner, S008, 68, 74, 79, Room for improvement
-Ivy Clark, S009, 84, 92, 89, Excellent performance in Assignment 2
-Jack White, S010, 93, 87, 88, Strong start
-Katie Hall, S011, 79, 85, 91, Consistent performance
-Liam Walker, S012, 87, 89, 86, Good grades throughout
-Mia Allen, S013, 92, 90, 94, Top performer
-Noah Hill, S014, 70, 78, 75, Needs improvement
-Olivia Young, S015, 85, 86, 88, Good overall performance
-Paula Martin, S016, 78, 75, 72, Needs improvement
-Quinn King, S017, 91, 88, 84, Strong start but dropped in Assignment 3
-Ryan Lewis, S018, 94, 92, 89, Top performer
-Samantha Turner, S019, 88, 86, 90, Good overall performance
-Tyler Harris, S020, 77, 79, 82, Steady progress
+Last Name,First Name,Student ID,A1,A2,A3
+Johnson,Alice,S001,85,92,78
+Smith,Bob,S002,72,88,90
+Davis,Carol,S003,91,79,84
+Wilson,David,S004,76,68,93
+Brown,Eve,S005,88,95,87
+Adams,Frank,S006,75,81,76
+Lee,Grace,S007,90,88,91
+Turner,Henry,S008,68,74,79
+Clark,Ivy,S009,84,92,89
+White,Jack,S010,93,87,88
+Hall,Katie,S011,79,85,91
+Walker,Liam,S012,87,89,86
+Allen,Mia,S013,92,90,94
+Hill,Noah,S014,70,78,75
+Young,Olivia,S015,85,86,88
+Martin,Paula,S016,78,75,72
+King,Quinn,S017,91,88,84
+Lewis,Ryan,S018,94,92,89
+Turner,Samantha,S019,88,86,90
+Harris,Tyler,S020,77,79,82
